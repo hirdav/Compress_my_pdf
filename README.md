@@ -82,7 +82,7 @@ compression_project/
 ├── README.md               # Project overview and instructions
 ├── requirements.txt        # List of dependencies
 ├── data/
-│   └── Problem_Solving.pdf # Original PDF file
+│   └── Sample.pdf # Original PDF file
 │   └── text_data.txt       # Cleaned text data file
 │
 ├── src/
