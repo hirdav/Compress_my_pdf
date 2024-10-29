@@ -48,7 +48,7 @@ def convert_image_to_ascii(image, line_width):
     resized_image = grayscale_image.resize((new_width, new_height))
     
     # ASCII characters by intensity
-    ascii_chars = "@%#*+=-:. "
+    ascii_chars = ">@%#*+=-:<. "
     ascii_art = ""
     for y in range(new_height):
         for x in range(new_width):
@@ -64,6 +64,4 @@ if __name__ == "__main__":
     
     # Extract and format text from the PDF
     extract_text_and_ascii_from_pdf(pdf_path, output_path)
-
-
 
