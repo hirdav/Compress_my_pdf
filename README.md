@@ -1,6 +1,6 @@
 
 
-# **📜 PDF to ASCII, Compression & Analysis Tool**  
+# **📜 PDF to text( ASCII for graphics), Compression & Analysis Tool**  
 
 ## **🚀 Project Overview**  
 This project automates the process of:  
@@ -74,7 +74,7 @@ python main.py
 
 ### **📈 Sample Analysis Graph**
 When you click **"Show Analysis"**, the tool generates a **bar chart** like this:  
-![Compression Analysis](images/compression.png)  
+![Compression Analysis](Images/compression.png)  
 (*Example bar chart for reference*)  
 
 ---
