@@ -1,147 +1,100 @@
-# Compress_my_pdf
 
 
+# **📜 PDF to ASCII, Compression & Analysis Tool**  
 
+## **🚀 Project Overview**  
+This project automates the process of:  
+1. **Extracting text from PDFs** and converting images into **ASCII art**.  
+2. **Compressing the extracted text** using **GZIP, BZ2, and ZLIB** to compare efficiency.  
+3. **Analyzing compression results** by **visualizing compression ratios** in a bar chart.  
 
----
-
-## A Text Compression Project
-
-## Project Overview
-
-This project applies and analyzes various **lossless compression** algorithms on a text file, focusing on `gzip`, `bz2`, and `zlib` compression methods. Using a cleaned text file, the project evaluates each algorithm's **compression ratio** and **execution time**, offering insights into the efficiency of each technique.
-
-### Key Features
-- **Text Extraction**: Extracts text from PDF and prepares it for compression.
-- **Compression & Decompression**: Uses multiple lossless compression methods.
-- **Performance Analysis**: Measures compression ratio and execution time.
-- **Visualization**: Plots comparative charts to visualize algorithm performance.
+### **💡 Why This Project?**  
+- PDFs contain a lot of valuable information but can be hard to process.  
+- This tool **extracts text and converts images to ASCII** to make it more accessible.  
+- Compression helps **reduce file size** for storage or transmission.  
+- **Visualization** helps compare which compression method works best!  
 
 ---
 
-## Types of Compression Used
+## **📂 Project Structure**  
 
-This project specifically uses **lossless compression**, which reduces file size without losing any data. The compression methods used here are essential for applications where the integrity of text data is critical, such as documents, code, and structured data files.
-
-### Compression Algorithms Implemented
-
-1. **Gzip (DEFLATE Algorithm)**:
-   - Combines the **LZ77** (dictionary-based) algorithm with **Huffman coding** (frequency-based).
-   - Ideal for general-purpose compression, providing a balance of **compression ratio** and **speed**.
-
-2. **Bz2 (Burrows-Wheeler Transform + Huffman Coding)**:
-   - Often achieves higher compression ratios than gzip but takes more time.
-   - Rearranges blocks of text so similar characters are grouped together for more efficient encoding, making it suitable for large files where high compression is critical.
-
-3. **Zlib (DEFLATE Algorithm)**:
-   - Similar to gzip but generally faster, making it ideal for streaming data.
-   - Balances compression ratio and speed, often used for high-performance applications.
-
----
-
-## What the Results Mean
-
-For each compression algorithm, we calculate the following:
-
-- **Compression Ratio**: Measures how effectively the file size is reduced.
-   - Calculated as:
-     \[
-     \text{Compression Ratio} = \frac{\text{Compressed Size}}{\text{Original Size}}
-     \]
-   - A lower compression ratio means a greater reduction in file size. For instance, a ratio of `0.3` indicates that the file was compressed to 30% of its original size.
-
-- **Compression and Decompression Time**: Indicates how fast each algorithm can compress and decompress the file.
-   - This varies based on the machine and system resources but provides insight into each algorithm's efficiency.
-   - For consistent timing, you can take an average over multiple runs to get more stable measurements.
-
-### Trade-Offs to Consider
-
-- **Compression Ratio vs. Speed**: Higher compression ratios can require more time, so the choice of algorithm depends on whether the focus is on saving storage space or on processing speed.
-- **Use Case Sensitivity**: Faster algorithms (like zlib) are preferred for real-time applications, while algorithms with better ratios (like bz2) are suitable for archival storage.
-
----
-
-## Installation and Setup
-
-### Prerequisites
-1. **Python 3.x** is required.
-2. **Install required libraries** from `requirements.txt`:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Dependencies
-- `pymupdf`: For PDF text extraction
-- `matplotlib`: For result visualization
-
-### Project Structure
-
-```plaintext
-compression_project/
-│
-├── README.md               # Project overview and instructions
-├── requirements.txt        # List of dependencies
-├── data/
-│   └── Sample.pdf # Original PDF file
-│   └── text_data.txt       # Cleaned text data file
-│
-├── src/
-│   ├── extract_text.py     # Script for extracting text from PDF
-│   ├── compression.py      # Main script for compression methods
-│   ├── analysis.py         # Visualization script for compression analysis
-│   └── __init__.py         # Makes src a Python package
-│
-└── tests/
-    ├── test_compression.py # Unit tests for compression methods
-    └── __init__.py         # Makes tests a package
+```
+.
+├── data/                          # Stores extracted text & compressed files
+│   ├── Sample.pdf                 # Example PDF file
+│   ├── Sample.txt                 # Extracted text
+│   ├── Sample_gzip.txt            # GZIP compressed text
+│   ├── Sample_bz2.txt             # BZ2 compressed text
+│   ├── Sample_zlib.txt            # ZLIB compressed text
+├── main.py                        # Main script (GUI + Processing)
+├── README.md                      # Project Documentation
+└── requirements.txt                # Required dependencies
 ```
 
 ---
 
-## Usage Instructions
-
-1. **Extract Text from PDF**:
-   ```bash
-   python src/extract_text.py
-   ```
-
-2. **Run Compression Analysis**:
-   ```bash
-   python src/compression.py
-   ```
-
-3. **Visualize Results**:
-   ```bash
-   python src/analysis.py
-   ```
+## **🖥️ Features**  
+✔ **GUI Interface** – No coding needed! Just select a file and run.  
+✔ **Live Progress Updates** – Status messages show extraction, compression, and analysis progress.  
+✔ **Multi-threading** – Keeps the UI responsive while processing.  
+✔ **Automatic Text Extraction** – Extracts text and ASCII images from PDF.  
+✔ **Compression Comparison** – Uses **GZIP, BZ2, and ZLIB**.  
+✔ **Analysis Graph** – Shows **compression efficiency** in a **visual format**.  
 
 ---
 
-## 📚 Resources for Learning
+## **🎯 How to Run the Project**
+### **1️⃣ Install Dependencies**
+Run the following command to install all required libraries:  
+```bash
+pip install pymupdf pillow tk matplotlib
+```
 
-### To Understand Compression Algorithms and Theory:
-- **Books**:
-   - *"Data Compression: The Complete Reference"* by David Salomon
-   - *"Introduction to Data Compression"* by Khalid Sayood
-- **Courses**:
-   - Coursera: "Information Theory" by the University of Illinois
-   - YouTube & Khan Academy: Search for videos on Huffman Coding, LZ77, and entropy encoding.
+### **2️⃣ Start the GUI**
+Simply run:  
+```bash
+python main.py
+```
 
-### Python and Algorithm Knowledge:
-- **Data Structures**:
-   - *"Algorithms, Part I"* on Coursera by Princeton University
-   - *"Algorithms"* by Robert Sedgewick and Kevin Wayne
-- **Python Optimization**:
-   - *"High Performance Python"* by Micha Gorelick and Ian Ozsvald
-
----
-
-
+### **3️⃣ Steps in the GUI**
+1. **Select a PDF file** 📂  
+2. **Click "Extract Text"** – Extracts text and converts images to ASCII 🎨  
+3. **Click "Compress Text"** – Compresses extracted text using GZIP, BZ2, and ZLIB 📦  
+4. **Click "Show Analysis"** – Displays a **bar chart** comparing compression efficiency 📊  
 
 ---
 
-## License
+## **📊 Understanding the Results**
+- **Compression Ratio** = (Compressed File Size) / (Original File Size)  
+- **Lower compression ratio = Better compression efficiency** ✅  
+- **GZIP, BZ2, and ZLIB** have different trade-offs:  
+  - **BZ2** provides the best compression but is slower.  
+  - **ZLIB** is faster but may not compress as well.  
+  - **GZIP** is a good balance between speed and compression.  
 
-This project is licensed under the MIT License.
+### **📈 Sample Analysis Graph**
+When you click **"Show Analysis"**, the tool generates a **bar chart** like this:  
+![Compression Analysis](images/compression.png)  
+(*Example bar chart for reference*)  
 
 ---
+
+## **💡 Use Cases**
+🔹 **Data Processing** – Extract text from large PDFs for further analysis.  
+🔹 **Storage Optimization** – Compress large text files to save space.  
+🔹 **Data Transmission** – Reduce file sizes for faster network transfer.  
+🔹 **AI & NLP** – Use extracted text for natural language processing.  
+
+---
+
+## **📌 Future Enhancements**
+- [ ] Support for **batch processing** multiple PDFs at once.  
+- [ ] More **compression methods** like LZMA.  
+- [ ] **Save analysis reports** as PNG or CSV.  
+
+---
+
+## **📜 License**
+This project is open-source under the **MIT License**.  
+
+
